@@ -15,6 +15,9 @@ describe 'Search Feature' do
       click_on 'search'
       
       expect(page).to have_content('Route')
+      expect(page).to have_content('Print')
+      expect(page).to have_css('#map')
+      expect(page).to have_css('.bars')
     end
   end
 end
