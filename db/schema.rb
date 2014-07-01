@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701213611) do
+ActiveRecord::Schema.define(version: 20140701222115) do
+
+  create_table "bars", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bars_paths", force: true do |t|
+    t.integer "bar_id"
+    t.integer "path_id"
+  end
+
+  create_table "paths", force: true do |t|
+    t.float    "start_lat"
+    t.float    "start_long"
+    t.float    "end_lat"
+    t.float    "end_long"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
