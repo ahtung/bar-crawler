@@ -9,6 +9,6 @@ describe 'Search Feature' do
       login_as(user)
     end
     
-    it 'I should be find the shortest wlking path between two points'
+    it 'I should be find the shortest walking path between two points'
   end
 end
