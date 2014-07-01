@@ -18,7 +18,7 @@ describe 'Search Feature' do
       expect(page).to have_content('Print')
       expect(page).to have_css('#map')
       expect(page).to have_css('.bars')
-      expect(Path.count).to eq(1)
+      expect(Path.count).to eq(6)
     end
   end
 end

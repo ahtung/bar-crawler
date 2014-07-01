@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Bar, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  let!(:bar) { FactoryGirl.create(:bar) }
+  
+  it 'should have a name' do
+    expect(bar.name).not_to be_nil
+  end
 end

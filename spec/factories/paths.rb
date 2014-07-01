@@ -6,5 +6,6 @@ FactoryGirl.define do
     start_long 1.5
     end_lat 1.5
     end_long 1.5
+    bars { FactoryGirl.create_list(:bar, 5) }
   end
 end
