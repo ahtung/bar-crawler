@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'pages/search'
+  get 'pages/index'
+  get 'pages/result'
 
+  post '/search', to: 'pages#search'
   devise_for :users
-  root to: "pages#search"
+  root to: "pages#index"
 end
