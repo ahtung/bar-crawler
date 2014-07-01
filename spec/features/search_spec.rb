@@ -6,11 +6,9 @@ describe 'Search Feature' do
     let!(:user) { FactoryGirl.create(:user) }
     
     before :each do
-      login_user
+      login_as(user)
     end
     
-    it 'I should be find the shortest wlking path between two points' do
-      
-    end
+    it 'I should be find the shortest wlking path between two points'
   end
 end
