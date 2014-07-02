@@ -19,6 +19,10 @@ describe 'Search Feature' do
       expect(page).to have_css('#map')
       expect(page).to have_css('.bars')
       expect(Path.count).to eq(6)
+      expect(Path.first.start_lat).not_to be_nil
+      expect(Path.first.start_long).not_to be_nil
+      expect(Path.first.end_lat).not_to be_nil
+      expect(Path.first.end_long).not_to be_nil
     end
   end
 end

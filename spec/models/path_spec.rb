@@ -5,7 +5,7 @@ RSpec.describe Path, :type => :model do
   let!(:path) { FactoryGirl.create(:path) }
   
   it 'should have a length' do
-    expect(path.length).to be > 0  
+    expect(path.length).to be > 0
   end
   
   it 'should have many bars' do

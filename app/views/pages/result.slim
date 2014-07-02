@@ -2,13 +2,14 @@ h2 Route
 
 p
   = @path.start_address
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@path.start_lat}%2C#{@path.start_long}"
+
+p
   = @path.end_address
-p
-  = @path.start_lat
-  = @path.start_long
-p
-  = @path.start_lat
-  = @path.start_long
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@path.end_lat}%2C#{@path.end_long}"
+
 #map
+
 .bars
+
 button Print
