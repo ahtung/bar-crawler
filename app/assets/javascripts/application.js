@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-
+//= require map
 $(function(){ $(document).foundation(); });
