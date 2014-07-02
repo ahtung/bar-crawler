@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
   
   def search
-    path = Path.create(path_params)
+    path = Path.create(start_address: params[:start_address], end_address: params[:end_address])
     redirect_to pages_result_path(id: path.id)
   end
   
@@ -16,9 +16,5 @@ class PagesController < ApplicationController
   private
     def set_path
       @path = Path.find(params[:id])
-    end
-
-    def path_params
-      params.permit(:start_address, :end_address)
     end
 end
