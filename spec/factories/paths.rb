@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :path do
+    start_address "Buijs Ballotstraat 106, Den Haag"
+    end_address "Fahreheitstraat 102, Den Haag"
     start_lat 1.5
     start_long 1.5
     end_lat 1.5

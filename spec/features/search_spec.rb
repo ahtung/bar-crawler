@@ -2,6 +2,38 @@ require 'rails_helper'
 require 'pp'
 describe 'Search Feature' do
   
+  before :all do
+    Geocoder.configure(:lookup => :test)
+
+    Geocoder::Lookup::Test.add_stub(
+      "Fahreheitstraat 102, Den Haag", [
+        {
+          'latitude'     => 40.7143528,
+          'longitude'    => -74.0059731,
+          'address'      => 'New York, NY, USA',
+          'state'        => 'New York',
+          'state_code'   => 'NY',
+          'country'      => 'United States',
+          'country_code' => 'US'
+        }
+      ]
+    )
+
+    Geocoder::Lookup::Test.add_stub(
+      "Buijs Ballotstraat 106, Den Haag", [
+        {
+          'latitude'     => 40.7143528,
+          'longitude'    => -74.0059731,
+          'address'      => 'New York, NY, USA',
+          'state'        => 'New York',
+          'state_code'   => 'NY',
+          'country'      => 'United States',
+          'country_code' => 'US'
+        }
+      ]
+    )
+  end
+  
   context 'as a User' do
     let!(:user) { FactoryGirl.create(:user) }
     
