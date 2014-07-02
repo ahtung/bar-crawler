@@ -5,24 +5,14 @@ class PagesController < ApplicationController
   end
   
   def search
-    start_lat, start_long = calculate_lat_long(params[:start_point])
-    end_lat, end_long = calculate_lat_long(params[:end_point])
-    Path.create(
-      start_lat: start_lat,
-      start_long: start_long,
-      end_lat: end_lat,
-      end_long: end_long
+    path = Path.create(
+      start_address: params[:start_addres],
+      end_address: params[:end_address]
     )
-    redirect_to pages_result_path
+    redirect_to pages_result_path(id: path.id)
   end
   
   def result
-    
+    @path = Path.find(params[:id])    
   end
-  
-  private
-  
-    def calculate_lat_long(address)
-      return [1.0, 1.0]
-    end
 end

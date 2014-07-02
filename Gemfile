@@ -15,6 +15,7 @@ gem 'slim-rails'
 gem 'foundation-rails'
 gem 'devise'
 gem 'rails_12factor', group: :production
+gem 'geocoder'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
