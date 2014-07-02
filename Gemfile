@@ -16,6 +16,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'geocoder'
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
