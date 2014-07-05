@@ -11,5 +11,6 @@
  * file per style scope.
  *
  *= require_self
+ *= require globals
  *= require foundation_and_overrides
  */
