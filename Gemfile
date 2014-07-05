@@ -16,8 +16,6 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'geocoder'
-gem 'gmaps4rails'
-gem 'underscore-rails'
 gem 'newrelic_rpm'
 
 group :development, :test do
