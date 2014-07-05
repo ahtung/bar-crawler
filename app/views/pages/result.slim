@@ -1,15 +1,9 @@
 h2 Route
 
 p
-  = @path.start_address
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@path.start_lat}%2C#{@path.start_long}"
+  = "From #{@path.start_address} to #{@path.end_address}"
 
-p
-  = @path.end_address
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@path.end_lat}%2C#{@path.end_long}"
-
-div style='width: 800px;'
-  #directions style='width: 800px; height: 400px;'
+#map data-start-lat="#{@path.start_lat}" data-start-long="#{@path.start_long}" data-end-lat="#{@path.end_lat}" data-end-long="#{@path.end_long}" style='width: 800px; height: 400px;'
 
 .bars
   ul
