@@ -5,7 +5,10 @@ $( document ).ready(function() {
 	var $map = $('#map');
   var start = new google.maps.LatLng($map.data('start-lat'), $map.data('start-long'));
   var end = new google.maps.LatLng($map.data('end-lat'), $map.data('end-long'));
+	var step = 0;
+	var percentage = 0.0;
 	var path;
+	var bars = [];
 	
 	function initialize() {
 	  var mapOptions = {
@@ -22,25 +25,21 @@ $( document ).ready(function() {
 	    destination:end,
 	    travelMode: google.maps.TravelMode.WALKING
 	  };
-	  directionsService.route(request, function(result, status) {
-	    if (status == google.maps.DirectionsStatus.OK) {
-	      directionsDisplay.setDirections(result);
-				path = result.routes[0];
-				console.log(path)
-				searchForBarsAtPath();
-	    }
-	  });
+	  directionsService.route(request, findPathCallback);
 	}
 	
-	function searchForBarsAtPath() {
-		$.each(path.overview_path, function( index, point ) {
-			searchForBarsAtPoint(point);
-		});
+	function findPathCallback(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+			path = result.routes[0];
+			console.log(path.overview_path.length)
+			searchForBarsAtPoint();
+    }
 	}
 	
-	function searchForBarsAtPoint(point) {
+	function searchForBarsAtPoint() {
 		var request = {
-	    location: point,
+	    location: path.overview_path[step],
 	    radius: '1',
 	    query: 'bar'
 	  };
@@ -49,15 +48,23 @@ $( document ).ready(function() {
 		
 	function callback(results, status) {
 	  if (status == google.maps.places.PlacesServiceStatus.OK) {
-	    for (var i = 0; i < results.length; i++) {
-	      var place = results[i];
-	      createMarker(results[i]);
-	    }
-	  }
+			$.each(results, function( index, bar ) {
+				if(bars.map(function(e) { return e.place_id; }).indexOf(bar.place_id) == -1) {
+					createMarker(bar);
+					bars.push(bar);
+				}
+			});	
+	  } 
+		
+		if(step++ != path.overview_path.length) {
+			percentage = step / path.overview_path.length * 100;
+			$('#percentage').html(" " + percentage.toFixed(2) + "%")
+			setTimeout(searchForBarsAtPoint, 100);
+		}
 	}
 	
 	function createMarker(place) {
-		var bars = $('.bars ul');
+		var bars = $('.bars ol');
 		var marker = new google.maps.Marker({
       position: place.geometry.location,
       map: map,

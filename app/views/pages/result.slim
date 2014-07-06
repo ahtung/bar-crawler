@@ -1,6 +1,8 @@
 .row
   .columns.small-8.small-push-2
-    h2 Route
+    h2
+      | Route
+      span#percentage  0.0%
     p= "From #{@path.start_address} to #{@path.end_address}"
 .row
   .columns.small-12
@@ -9,7 +11,7 @@
 .row
   .columns.small-8.small-push-2
     .bars
-      ul
+      ol
 .row#print-row
   .columns.small-12.small-centered
     button onClick="window.print();" Print
