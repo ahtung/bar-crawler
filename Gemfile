@@ -26,3 +26,7 @@ group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
 end
+
+group :development do
+  gem 'guard-livereload'
+end
