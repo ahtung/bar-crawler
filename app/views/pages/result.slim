@@ -1,10 +1,23 @@
-h2 Route
+.row
+  .columns.small-8.small-push-2
+    h2 Route
+    p= "From #{@path.start_address} to #{@path.end_address}"
+.row
+  .columns.small-12
+    #map data-start-lat="#{@path.start_lat}" data-start-long="#{@path.start_long}" data-end-lat="#{@path.end_lat}" data-end-long="#{@path.end_long}" style='height: 30rem;'
 
-p
-  = "From #{@path.start_address} to #{@path.end_address}"
-
-#map data-start-lat="#{@path.start_lat}" data-start-long="#{@path.start_long}" data-end-lat="#{@path.end_lat}" data-end-long="#{@path.end_long}" style='width: 800px; height: 400px;'
-
-.bars
-
-button Print
+.row
+  .columns.small-8.small-push-2
+    .bars
+      ul
+        li
+          a href="#" Link 1
+        li
+          a href="#" Link 2
+        li
+          a href="#" Link 3
+        li
+          a href="#" Link 4
+.row#print-row
+  .columns.small-12.small-centered
+    button Print

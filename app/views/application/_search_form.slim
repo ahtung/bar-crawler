@@ -1,4 +1,14 @@
 = form_tag "/search" do
-  = text_field_tag :start_address
-  = text_field_tag :end_address
-  = submit_tag "search", class: 'button'
+  .row
+    .columns.small-12
+      label
+        | Start
+        = text_field_tag :start_address
+  .row
+    .columns.small-12
+      label
+        | End
+        = text_field_tag :end_address
+  .row
+    .columns.small-12
+      = submit_tag "search", class: 'button'
