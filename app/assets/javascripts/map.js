@@ -59,7 +59,7 @@ $( document ).ready(function() {
 		if(step++ != path.overview_path.length) {
 			percentage = step / path.overview_path.length * 100;
 			$('#percentage').html(" " + percentage.toFixed(2) + "%")
-			setTimeout(searchForBarsAtPoint, 100);
+			setTimeout(searchForBarsAtPoint, 10);
 		}
 	}
 	
