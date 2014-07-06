@@ -1,14 +1,16 @@
-= form_tag "/search" do
+= form_tag "/search", data: { abide: true } do
   .row
     .columns.small-12
       label
         | Start
-        = text_field_tag :start_address
+        = text_field_tag :start_address, nil, required: true
+      small.error Start address is required
   .row
     .columns.small-12
       label
         | End
-        = text_field_tag :end_address
+        = text_field_tag :end_address, nil, required: true
+      small.error End address is required
   .row
     .columns.small-12
       = submit_tag "search", class: 'button'
