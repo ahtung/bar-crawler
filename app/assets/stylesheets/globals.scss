@@ -1,14 +1,21 @@
 // COLORS
 $first-color: #1B100D;
 $second-color: #6A2C0C;
-$third-color: #CB5909;
+$third-color: #EFBE2A;
 $fourth-color: #F18E1C;
 $fifth-color: #FFFBB1;
 
 // FONTS
 @font-face {
-  font-family: 'PC-GothicScroll';
-  src:font-url('PCGothicScroll.ttf');
+  font-family: 'Lily Script One';
+  src:font-url('LilyScriptOne-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather Sans Regular';
+  src:font-url('MerriweatherSans-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }

@@ -46,9 +46,9 @@
 // $font-weight-bold: bold !default
 
 // We use these to control various global styles
-$body-bg: $fifth-color;
+$body-bg: white;
 $body-font-color: $first-color;
-// $body-font-family: 'PC-GothicScroll';
+$body-font-family: 'Merriweather Sans Regular';
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -125,7 +125,7 @@ $secondary-color: $fourth-color;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: "Lily Script One";
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
 $header-font-color: $first-color;
