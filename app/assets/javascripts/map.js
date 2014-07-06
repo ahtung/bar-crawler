@@ -58,7 +58,6 @@ $( document ).ready(function() {
 	
 	function createMarker(place) {
 		var bars = $('.bars ul');
-		console.log(place)
 		var marker = new google.maps.Marker({
       position: place.geometry.location,
       map: map,
