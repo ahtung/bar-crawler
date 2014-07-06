@@ -3,7 +3,14 @@
     h2
       | Route
       span#percentage  0.0%
-    p= "From #{@path.start_address} to #{@path.end_address}"
+    .row
+      .columns.small-6
+        h4 From 
+        = @path.start_address
+		.row
+      .columns.small-6
+        h4 to
+        = @path.end_address
 .row
   .columns.small-12
     #map data-start-lat="#{@path.start_lat}" data-start-long="#{@path.start_long}" data-end-lat="#{@path.end_lat}" data-end-long="#{@path.end_long}" style='height: 30rem;'
