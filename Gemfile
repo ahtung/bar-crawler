@@ -28,5 +28,5 @@ group :development, :test do
 end
 
 group :development do
-  gem 'guard-livereload'
+  gem 'guard-livereload', require: false
 end
