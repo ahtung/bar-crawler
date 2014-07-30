@@ -15,10 +15,7 @@ class Analytics
     track(
       {
         user_id: user.id,
-        event: 'Create User',
-        properties: {
-          city_state: user.zip.to_region
-        }
+        event: 'Create User'
       }
     )
   end
