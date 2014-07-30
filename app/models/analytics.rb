@@ -15,7 +15,10 @@ class Analytics
     track(
       {
         user_id: user.id,
-        event: 'Create User'
+        event: 'Create User',
+        properties: {
+         email: user.email
+        }
       }
     )
   end
