@@ -1,6 +1,6 @@
 class Analytics
   class_attribute :backend
-  self.backend = AnalyticsRuby
+  self.backend = Segment::Analytics
 
   def initialize(user, client_id = nil)
     @user = user
