@@ -47,10 +47,7 @@ class Analytics
 
   def user_traits
     {
-      email: user.email,
-      first_name: user.first_name,
-      last_name: user.last_name,
-      city_state: user.city_state,
+      email: user.email
     }.reject { |key, value| value.blank? }
   end
 
