@@ -1,6 +1,9 @@
 class Analytics
   class_attribute :backend
-  self.backend = Segment::Analytics
+  self.backend = Segment::Analytics.new({
+    write_key: 'hg6ymjhc6y',
+    on_error: Proc.new { |status, msg| print msg }
+  })
 
   def initialize(user, client_id = nil)
     @user = user
