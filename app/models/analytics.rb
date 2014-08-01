@@ -16,9 +16,7 @@ class Analytics
       {
         user_id: user.id,
         event: 'Create User',
-        properties: {
-         email: user.email
-        }
+        properties: user_traits
       }
     )
   end
