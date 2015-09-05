@@ -18,7 +18,8 @@ gem 'rails_12factor', group: :production
 gem 'geocoder'
 gem 'newrelic_rpm'
 gem 'foreman'
-gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
+gem 'analytics-ruby', '~> 2.0.0', require: 'segment/analytics'
+gem 'puma'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
