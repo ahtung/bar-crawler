@@ -1,3 +1,4 @@
+# Analytics
 class Analytics
   class_attribute :backend
   self.backend = Segment::Analytics.new({

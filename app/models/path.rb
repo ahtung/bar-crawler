@@ -1,11 +1,12 @@
+# Path
 class Path < ActiveRecord::Base
 
   belongs_to :user
   has_and_belongs_to_many :bars
-  
+
   geocoded_by :start_address, latitude: :start_lat, longitude: :start_long
   geocoded_by :end_address, latitude: :end_lat, longitude: :end_long
-  
+
   before_validation :custom_geocoding
 
   def custom_geocoding
@@ -16,7 +17,7 @@ class Path < ActiveRecord::Base
     self.end_lat = end_result.latitude if end_result
     self.end_long = end_result.longitude if end_result
   end
-  
+
   def length
     1
   end

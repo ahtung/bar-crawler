@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.13'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -22,11 +22,15 @@ gem 'analytics-ruby', '~> 2.0.0', require: 'segment/analytics'
 gem 'puma'
 
 group :development, :test do
+  gem 'brakeman', require: false
+  gem 'rubocop', require: false
+  gem 'cane'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'simplecov', require: false
 end
 
 group :development do
