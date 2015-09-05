@@ -16,7 +16,6 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'geocoder'
-gem 'newrelic_rpm'
 gem 'foreman'
 gem 'analytics-ruby', '~> 2.0.0', require: 'segment/analytics'
 gem 'puma'
