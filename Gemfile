@@ -19,11 +19,11 @@ gem 'geocoder'
 gem 'foreman'
 gem 'analytics-ruby', '~> 2.0.0', require: 'segment/analytics'
 gem 'puma'
+gem 'cane'
 
 group :development, :test do
   gem 'brakeman', require: false
   gem 'rubocop', require: false
-  gem 'cane'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'faker'
   gem 'factory_girl_rails'
