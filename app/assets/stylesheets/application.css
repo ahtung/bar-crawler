@@ -12,7 +12,6 @@
  *
  *= require_self
  *= require globals
- *= require foundation
  *= require foundation_and_overrides
  *= require pages
  */
