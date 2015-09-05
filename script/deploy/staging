@@ -1,0 +1,7 @@
+#!/bin/bash
+set -x
+set -e
+
+git push git@heroku.com:bar-crawler-staging.git develop:master
+heroku run rake db:migrate --app bar-crawler-staging
+heroku run rake db:seed --app bar-crawler-staging
